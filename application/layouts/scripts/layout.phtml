@@ -1,25 +1,31 @@
 <!-- application/layouts/scripts/layout.phtml -->
-<?php echo $this->doctype()."\n"; ?>
+<?php echo $this->doctype() . "\n"; ?>
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>Zend Framework Quickstart Application</title>
-        <?php echo $this->headLink()->appendStylesheet('/css/global.css')."\n"; ?>
+        <meta http-equiv="x-ua-compatible" content="IE=100" />
+        <meta charset="utf-8">
+        <title>Zend Framework Quick Start Application</title>
+        <?php echo $this->headLink()->appendStylesheet('/css/global.css') . "\n"; ?>         
+        <!--[if lt IE 9]>        
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
     </head>
     <body>
-        <div id="header" style="background-color: #EEEEEE; height: 30px;">
-            <div id="header-logo" style="float: left">
-                <b>ZF Quickstart Application</b>
-            </div>
-            <div id="header-navigation" style="float: right">
-                <a href="<?php
+        <header>
+            <div id="header-inner">
+                <hgroup id="header-logo">
+                    <h1>ZF Quick Start Application</h1>
+                    <h2>Modified by Paul Albinson</h2>
+                </hgroup>
+                <nav id="header-navigation">
+                    <a href="/" title="Back to home">Home</a> 
+                    <a href="<?php
         echo $this->url(
                 array('controller' => 'guestbook'), 'default', true)
         ?>">Guestbook</a>
+                </nav>
             </div>
-        </div>
-
+        </header>       
         <?php echo $this->layout()->content ?>
-
     </body>
 </html>

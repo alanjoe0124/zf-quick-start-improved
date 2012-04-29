@@ -1,17 +1,31 @@
 <!-- application/views/scripts/guestbook/index.phtml -->
-
-<p><a href="<?php
+<section class="main">
+    <nav class="inner-nav"><a href="<?php
 echo $this->url(
         array(
     'controller' => 'guestbook',
     'action' => 'sign'
         ), 'default', true)
-?>">Sign Our Guestbook</a></p>
+?>">Sign Our Guestbook</a></nav>
 
-Guestbook Entries: <br />
-<dl>
-    <?php foreach ($this->entries as $entry): ?>
-        <dt><?php echo $this->escape($entry->email) ?></dt>
-        <dd><?php echo $this->escape($entry->comment) ?></dd>
-    <?php endforeach ?>
-</dl>
+    
+    <section id="guestbook-entries">
+        <h1>Guestbook Entries</h1>
+        <?php
+        if (!empty($this->entries)):
+            foreach ($this->entries as $entry):
+                ?>
+                <article>
+                    <div><?php echo $this->escape($entry->email) ?></div>
+                    <p><?php echo $this->escape($entry->comment) ?></p>
+                </article>
+                <?php
+            endforeach;
+        else:
+            ?>
+            No entries found.
+        <?php
+        endif;
+        ?>
+    </section>
+</section>
