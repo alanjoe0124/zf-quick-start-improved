@@ -48,8 +48,8 @@ class Application_Form_Guestbook extends Zend_Form
                 'label' => 'Enter the words you see below into the box:',
                 'captcha'       => 'ReCaptcha',
                 'captchaOptions' => array('captcha' => 'recaptcha',        
-											  'pubKey' => $publickey,
-											  'privKey' => $privatekey,
+                                            'pubKey' => $publickey,
+                                            'privKey' => $privatekey,
                                               'theme' => 'clean'),
                 'ignore' => true
                 )            
