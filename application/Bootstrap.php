@@ -7,7 +7,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         $this->bootstrap('FrontController'); // Initialise the front controller 
         $front = $this->getResource('FrontController'); // Get the front controller
         
-        if ($_SERVER["SERVER_NAME"] == "demos.paulalbinson.info"):
+        if (in_array($_SERVER["SERVER_NAME"], array("demos.paulalbinson.info", "lcl.demos.paulalbinson.info"))):  // Made it work with my development version (lcl.demos.paulalbinson.info)
             $front->setBaseUrl("/zf-quick-start-improved"); // Set the base URL
         endif;
         
