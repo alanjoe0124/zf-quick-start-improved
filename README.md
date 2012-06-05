@@ -12,6 +12,8 @@ It includes among other things:
 - Database advice
 - Form improvements
 - HTML5
+- Used baseUrl to allow flexibility of where the project is located (i.e. it now works in a sub folder)
+- Made better use of this->url
 
 and much more.
 

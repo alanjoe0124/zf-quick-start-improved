@@ -4,7 +4,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 {
 
     public function run(){
-        $this->bootstrap('FrontController');  
+        $this->bootstrap('FrontController'); // Initialise the front controller 
         $front = $this->getResource('FrontController'); // Get the front controller
         
         if ($_SERVER["SERVER_NAME"] == "demos.paulalbinson.info"):
@@ -17,10 +17,12 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         }
 
         $this->frontController = $front; // Update the front controller  
+        
         self::_dispatch();
     }
     
     protected function _dispatch() {
+        // Display an error if we can't find the front controller
         if ($this->frontController == null):
             throw Exception('The front controller has not been initialized.');
         endif;
