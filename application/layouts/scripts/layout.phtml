@@ -6,8 +6,8 @@
         <meta charset="utf-8">
         <title>Zend Framework Quick Start Application</title>
         <?php 
-        $baseUrl = $this->baseUrl(); 
-        if (!empty($baseUrl)): echo '<base href="'.$baseUrl.'">'; endif;
+        $baseUrl = $this->baseUrl(""); 
+        if ((!empty($baseUrl)) && ($baseUrl != "/")): echo "<base href='".$baseUrl."'>\n\t\t"; endif;
         echo $this->headLink()->appendStylesheet($this->baseUrl('css/global.css')) . "\n"; 
         ?>         
         <!--[if lt IE 9]>        
@@ -22,7 +22,7 @@
                     <h2>Modified by Paul Albinson</h2>
                 </hgroup>
                 <nav id="header-navigation">
-                    <a href="<?php echo $this->baseUrl(); ?>" title="Back to home">Home</a> 
+                    <a href="<?php echo $this->baseUrl(""); ?>" title="Back to home">Home</a> 
                     <a href="<?php
         echo $this->url(
                 array('controller' => 'guestbook'), 'default', true)
