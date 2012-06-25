@@ -1,22 +1,22 @@
 <section class="main">
     <hgroup>
         <h1>An error occurred</h1>
-        <h2><?php echo $this->message ?></h2>
+        <h2><?php echo $this->message; ?></h2>
     </hgroup>
     <?php if (APPLICATION_ENV == 'development'): ?>
         <section>
             <h1>Exception information:</h1>
             <p>
-                <b>Message:</b> <?php echo $this->exception->getMessage() ?>
+                <b>Message:</b> <?php echo $this->exception->getMessage(); ?>
             </p>
         </section>
         <section>
             <h1>Stack trace:</h1>
-            <pre><?php echo $this->exception->getTraceAsString() ?></pre>
+            <pre><?php echo $this->exception->getTraceAsString(); ?></pre>
         </section>
         <section>
             <h1>Request Parameters:</h1>
-            <pre><?php echo var_export($this->request->getParams(), 1) ?></pre>
-        <?php endif ?>
-    </section>
+            <pre><?php echo var_export($this->request->getParams(), 1); ?></pre>
+        </section>
+    <?php endif; ?>
 </section>
